@@ -1,1 +1,1 @@
-# CapstoneFrontend
+This capstone project, the Human Resource Management System (HRMS) Frontend, was developed as part of the requirements for completing a Master’s degree in IT at the University of the People. It provides the web-based interface for streamlining HR tasks like recruitment, performance evaluation, and attendance tracking. Built using microservices architecture and cloud-based deployment, this frontend ensures efficient, scalable, and secure interaction with the overall HRMS platform.
