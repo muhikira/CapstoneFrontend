@@ -1,4 +1,1 @@
 # CapstoneFrontend
-
-test
-ste
