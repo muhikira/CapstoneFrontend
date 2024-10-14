@@ -1,0 +1,14 @@
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+.navbar-brand {
+    font-weight: bold;
+    color: var(--primary-color) !important;
+}
+.nav-link {
+    color: var(--secondary-color) !important;
+    font-weight: 500;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
+}

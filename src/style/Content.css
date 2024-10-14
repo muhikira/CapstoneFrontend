@@ -1,0 +1,25 @@
+.main-content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    transition: all 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,.15);
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: #004494;
+    border-color: #004494;
+}
+.table {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+}
