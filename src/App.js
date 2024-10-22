@@ -7,7 +7,7 @@ import Navigation from './components/Navigation'
 import Login from './components/Login'
 import EmployeeDashboard from './components/EmployeeDashboard'
 import AdminDashboard from './components/AdminDashboard'
-// import EmployeeManagement from './components/EmployeeManagement'
+import Footer from './components/Footer'
 import DepartmentManagement from './components/DepartmentManagement'
 import EmployeeManagment from './components/EmployeeManagment'
 import Recruitment from './components/Recruitment'
@@ -41,6 +41,7 @@ function App() {
             <Route path="*" element={<Navigate to="/jobs" replace />} />
           </Routes>
         </Container>
+        <Footer />
       </AuthProvider>
     </Router>
     </>

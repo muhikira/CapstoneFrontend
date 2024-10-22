@@ -3,6 +3,7 @@ import '../style/Login.css'
 import { Form, Button, Alert, Card } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from './AuthContext'
+import Slideshow from './Slideshow'
 
 export default function Login() {
 	const [username, setUsername] = useState('admin')
@@ -33,7 +34,9 @@ export default function Login() {
     }
 	}
   return (
-    <div className='col-4 d-flex m-auto'>
+    <>
+    <Slideshow/>
+    <div className='col-4 d-flex m-auto mt-5'>
 
     
     <Card>
@@ -68,6 +71,8 @@ export default function Login() {
       </Card.Body>
     </Card>
     </div>
+    </>
+    
   );
  
 }

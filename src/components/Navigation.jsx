@@ -15,7 +15,7 @@ export default function Navigation() {
   return (
     <Navbar bg="primary" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/">EMS</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">HRMS</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
