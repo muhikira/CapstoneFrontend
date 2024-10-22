@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { Table, Button, Modal, Form } from 'react-bootstrap'
-import axios from 'axios'
+
+
 
 export default function EmployeeManagement() {
   const [employees, setEmployees] = useState([])
   const [showModal, setShowModal] = useState(false)
   const [currentEmployee, setCurrentEmployee] = useState(null)
-
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   
 
   useEffect(() => {
@@ -14,16 +16,23 @@ export default function EmployeeManagement() {
   }, [])
 
   const fetchEmployees = async () => {
+    
     const token = localStorage.getItem('token')
-    const response = await axios.get('http://localhost:8080/api/employees',{
-      headers: { 'Content-Type': 'application/json', 'Authorization' : `bearer ${token}` },
-    })
+    
+    const response = await fetch('http://localhost:8080/api/employees', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
+    });
 
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
 
-    const data = response.data
+    const data = await response.json()
+    
     setEmployees(data)
   }
 
@@ -80,17 +89,18 @@ export default function EmployeeManagement() {
           </tr>
         </thead>
         <tbody>
-          {employees.map((employee) => (
+          {employees && employees.map((employee) => (
             <tr key={employee.id}>
-              <td>{employee.name}</td>
-              <td>{employee.department}</td>
+              <td>{employee.firstName} {employee.lastName}</td>
+              <td>{employee.department.departmentName}</td>
               <td>{employee.position}</td>
               <td>${employee.salary}</td>
-              <td>
-                <Button variant="primary" size="sm" className="mr-2" onClick={() => handleShowModal(employee)}>
+              <td >
+                <Button style={{ marginLeft: '20px' }}  variant="primary" size="sm" className="mr-2" onClick={() => handleShowModal(employee)}>
                   Edit
                 </Button>
-                <Button variant="danger" size="sm" onClick={() => handleDeleteEmployee(employee.id)}>
+
+                <Button style={{ marginLeft: '20px' }} variant="danger" size="sm" onClick={() => handleDeleteEmployee(employee.id)}>
                   Delete
                 </Button>
               </td>
