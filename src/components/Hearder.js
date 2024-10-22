@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from './Nav'
+import Navigation from './Navigation'
 
 export default function Hearder() {
   return (
@@ -7,7 +7,7 @@ export default function Hearder() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
             <a className="navbar-brand" href="index.html">HR & Payroll</a>
-            <Nav/>
+            <Navigation/>
         </div>
     </nav>
 

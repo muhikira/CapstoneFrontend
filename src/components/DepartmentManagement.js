@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 
-export default function Departments() {
+export default function DepartmentManagement() {
     const [depts, setDepts] = useState([]);
 
     const fetchDepts = async ()=>{
